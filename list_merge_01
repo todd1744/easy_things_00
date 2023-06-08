@@ -1,0 +1,23 @@
+Напишите функцию merge(list1, list2), которая принимает в качестве аргументов два отсортированных по возрастанию списка,
+состоящих из целых чисел, и объединяет их в один отсортированный список.
+
+def merge(list1, list2):
+    p1, p2 = 0, 0
+    list3 = []
+    while p1 < len(list1) and p2 < len(list2):
+        if list1[p1] <= list2[p2]:
+            list3.append(list1[p1])
+            p1 += 1
+        else:
+            list3.append(list2[p2])
+            p2 += 1
+    if p1 < len(list1): list3 += list1[p1:]
+    if p2 < len(list2): list3 += list2[p2:]       
+    return list3           
+
+# считываем данные
+numbers1 = [int(c) for c in input().split()]
+numbers2 = [int(c) for c in input().split()]
+
+# вызываем функцию
+print(merge(numbers1, numbers2))
