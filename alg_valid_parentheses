@@ -1,0 +1,30 @@
+Write a function that takes a string of parentheses, and determines if the order of the parentheses is valid.
+The function should return true if the string is valid, and false if it's invalid.
+
+def is_correct_bracket(text):
+    count = 0
+    for c in text:
+        if c == '(':
+            count += 1
+        else:
+            count -= 1
+            if count < 0:
+                return False
+    return count == 0            
+
+# считываем данные
+txt = input()
+
+# вызываем функцию
+print(is_correct_bracket(txt))
+
+
+
+# not my solution
+
+def valid_parentheses(s:str):
+    lvl = 0
+    for c in s:
+        lvl += (c=='(') - (c==')')
+        if lvl<0: return False
+    return not lvl
