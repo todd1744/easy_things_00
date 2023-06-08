@@ -1,0 +1,18 @@
+Напишите функцию is_prime(num), которая принимает в качестве аргумента натуральное число и возвращает значение True, если число является простым и False в противном случае.
+Напишите функцию get_next_prime(num), которая принимает в качестве аргумента натуральное число num и возвращает первое простое число большее числа num.
+
+def is_prime(num):
+    return len([i for i in range(1, num + 1) if not num % i]) == 2
+def get_next_prime(num):
+    f = True
+    while f:
+        num += 1
+        if is_prime(num):
+            f = False
+    return num  
+
+# считываем данные
+n = int(input())
+
+# вызываем функцию
+print(get_next_prime(n))
