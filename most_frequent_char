@@ -1,0 +1,12 @@
+На вход программе подается строка текста. Напишите программу, которая выводит на экран символ, который появляется наиболее часто.
+
+s = input()
+cc = ''
+numb, answer = '', 0
+for c in s[::-1]:
+    if c not in cc:
+        cc += c
+        if answer < s.count(c):
+            answer = s.count(c)
+            numb = c
+print(numb)
